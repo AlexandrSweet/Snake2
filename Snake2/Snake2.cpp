@@ -8,7 +8,7 @@ using namespace std;
 bool gameOver;
 const int width = 20;
 const int height = 20;
-int x, y, fruitX, fruitY, score;
+int x, y, fruitX, fruitY, score, speed;
 int tailX[100], tailY[100];                                        //max tail
 int nTail;
 enum eDirection { STOP = 0, LEFT, RIGHT, UP, DOWN };
@@ -23,6 +23,7 @@ void Setup()
     fruitX = rand() % width;
     fruitY = rand() % height;
     score = 0;
+    speed = 250;
 }
 void Draw()
 {
@@ -148,7 +149,7 @@ int main()
         Draw();
         Input();
         Logic();
-        Sleep(250);  //speed
+        Sleep(speed);  //speed
     }
     return 0;
 }
