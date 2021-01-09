@@ -134,6 +134,10 @@ void Logic()
     if (x == fruitX && y == fruitY)
     {
         score += 10;
+        if (score % 100 == 0 && speed!=0)
+        {
+            speed -= 50;
+        }
         fruitX = rand() % width;
         fruitY = rand() % height;
         nTail++;
